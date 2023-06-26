@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { primaryContext } from "./contexts/PrimaryContext";
 import "./App.css";
 
 function App() {
@@ -9,6 +10,9 @@ function App() {
     isSuccess: false,
     error: "",
   });
+
+  // Taking callback to setPeople from context
+  const { setPeople } = useContext(primaryContext);
 
   // Once App component is mounted - this useEffect will be executed
   useEffect(() => {
@@ -31,7 +35,7 @@ function App() {
         // People here - is the array of people from API
         const people = response.data.results;
 
-        // You can put it to context here...
+        setPeople(people);
       } catch (e) {
         setFetchingPeople({
           isLoading: false,
