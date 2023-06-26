@@ -4,19 +4,17 @@ import {primaryContext} from "../../contexts/primaryContext"
 
 const PeoplePage = () => {
    const {people,setPeople}= useContext(primaryContext);
-   const display=people.maps((person)=>{
-       return(
-        <li>
-            <Link to="/singlePage">{person.name}</Link>
-        </li>
-       ) 
-   })
+   const display=people.map((person)=> (
+      <li key={person.name}>
 
+<Link to={`/singlePersonPage/${person.name}`}>{person.name}</Link>
+    </li>
+    ));
   return (
     <ul>
       {display}
     </ul>
-  )
-}
+  );
+};
 
 export default PeoplePage
