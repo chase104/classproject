@@ -1,17 +1,17 @@
 import React, { useContext} from 'react';
-import { PrimaryContext } from '../contexts/PrimaryContext';
+import { PrimaryContext } from '../../contexts/PrimaryContext';
 import { Link } from 'react-router-dom';
 
 
 
 
-const shipsPage = () => {
+const ShipsPage = () => {
 
     const { ships } = useContext(PrimaryContext)
 
     let shipsJsxArray = ships.map((object) => {
             
-            return <Link to='/singleShip'><h4 key={object.id}>{object.name}</h4></Link> 
+            return <Link to={`/singleShip/${object.name}`}><h4 key={object.id}>{object.name}</h4></Link> 
         }
     )
 
@@ -20,4 +20,4 @@ const shipsPage = () => {
   )
 }
 
-export default shipsPage
+export default ShipsPage;
