@@ -10,8 +10,10 @@ const Navbar = () => {
       ></img>
 
       <Link to="/">Home</Link>
-      <Link to="/ships">Single Ships</Link>
-      <Link to="/people">Single People</Link>
+      <Link to="/ships">Ships</Link>
+      <Link to="/singleShips">Single Ships</Link>
+      <Link to="/people">People</Link>
+      <Link to="/singlePeople">Single People</Link>
     </div>
   );
 };
