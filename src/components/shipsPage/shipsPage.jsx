@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const shipsPage = () => {
+const ShipsPage = () => {
 
     const { ships } = useContext(PrimaryContext)
 
@@ -20,4 +20,4 @@ const shipsPage = () => {
   )
 }
 
-export default shipsPage
+export default ShipsPage;
