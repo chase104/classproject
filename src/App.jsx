@@ -12,7 +12,7 @@ function App() {
   });
 
   // Taking callback to setPeople from context
-  const { setPeople } = useContext(primaryContext);
+  const { setPeople, setShips } = useContext(primaryContext);
 
   // Once App component is mounted - this useEffect will be executed
   useEffect(() => {
@@ -47,6 +47,22 @@ function App() {
 
     fetchPeople();
   }, []);
+
+  useEffect(() => {
+    try {
+      const getShips = async () => {
+        const response = await axios.get("https://swapi.dev/api/starships")
+        const ships = response.data.results
+        setShips(ships)
+      }
+  
+      getShips()
+    }
+    catch (error) {
+      setShips({error: "something went wrong during the request!"})
+    }    
+
+  }, [])
 
   return (
     <>
