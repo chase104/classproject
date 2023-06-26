@@ -5,13 +5,13 @@ export const primaryContext = createContext();
 const PrimaryContextProvider = ({ children }) => {
   // put state
   const [people, setPeople] = useState([]);
-  const [ships, setShip] = useState([]);
+  const [ships, setShips] = useState([]);
 
   let stateObject = {
     people,
     setPeople,
     ships,
-    setShip,
+    setShips,
   };
 
   return (
