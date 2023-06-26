@@ -18,7 +18,7 @@ function App() {
       getShips()
     }
     catch (error) {
-      console.error(error)
+      setShips({error: "something went wrong during the request!"})
     }    
 
   }, [])
