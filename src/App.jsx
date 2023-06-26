@@ -1,6 +1,8 @@
+
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { primaryContext } from "./contexts/PrimaryContext";
+import Navbar from './components/Navbar'
 import "./App.css";
 
 function App() {
@@ -48,6 +50,7 @@ function App() {
     fetchPeople();
   }, []);
 
+
   useEffect(() => {
     try {
       const getShips = async () => {
@@ -66,6 +69,7 @@ function App() {
 
   return (
     <>
+    <Navbar />
       <h1>Our Class Project</h1>
     </>
   );
