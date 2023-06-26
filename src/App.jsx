@@ -1,11 +1,15 @@
 
-
-
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { primaryContext } from "./contexts/PrimaryContext";
 import Navbar from './components/Navbar'
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import SinglePersonPage from './components/PeoplePage/index';
+import PeoplePage from './components/PeoplePage/index';
+import SinglePersonPage from './components/singlePersonPage.jsx'
+import Ships from './components/shipsPage/shipsPage.jsx'
+import SingleShips from './SingleShip'
 
 function App() {
   // You can use this state variable to manage network state (for showing loaders / errors etc.)
@@ -14,7 +18,6 @@ function App() {
     isSuccess: false,
     error: "",
   });
-
   // Taking callback to setPeople from context
   const { setPeople, setShips } = useContext(primaryContext);
 
@@ -74,6 +77,17 @@ function App() {
     <>
     <Navbar />
       <h1>Our Class Project</h1>
+     
+        <Routes>
+          {/* <Route path="/singlePersonPage/:name" element={SinglePersonPage}/> */}
+          <Route path="/people" element={<PeoplePage/>}/>
+          <Route path="/singlePersonPage/:name" element={<SinglePersonPage/>}/>
+          <Route path="/singleShip/:name" element={<SingleShips/>}/>
+          <Route path="/ships" element={<Ships/>}/>
+          {/* <Route path="/singleShipPage/:id" element={SingleShipPage}/>
+          <Route path="/ships" element={ShipsPage}/> */}
+        </Routes>
+      
     </>
   );
 }
