@@ -11,7 +11,7 @@ const shipsPage = () => {
 
     let shipsJsxArray = ships.map((object) => {
             
-            return <Link to={`/singleShip/${object.id}`}><h4 key={object.id}>{object.name}</h4></Link> 
+            return <Link to={`/singleShip/${object.name}`}><h4 key={object.id}>{object.name}</h4></Link> 
         }
     )
 
