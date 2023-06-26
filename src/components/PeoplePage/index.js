@@ -6,10 +6,10 @@ const PeoplePage = () => {
    const {people,setPeople}= useContext(primaryContext);
    const display=people.map((person)=> (
       <li key={person.name}>
-    <Link to={`/singlePersonPage`}>{person.name}</Link>
+
+<Link to={`/singlePersonPage/${person.name}`}>{person.name}</Link>
     </li>
     ));
-
   return (
     <ul>
       {display}
