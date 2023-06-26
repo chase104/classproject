@@ -1,15 +1,21 @@
 import React,{useContext,useEffect} from 'react'
+import { Link } from 'react-router-dom';
+import {primaryContext} from "../../contexts/primaryContext"
 
 const PeoplePage = () => {
-   const {peopleData,setPeopleData}= useContext(primaryContext);
-   const display=peopleData.maps((people)=>{
-        
+   const {people,setPeople}= useContext(primaryContext);
+   const display=people.maps((person)=>{
+       return(
+        <li>
+            <Link to="/singlePage">{person.name}</Link>
+        </li>
+       ) 
    })
 
   return (
-    <div>
-      
-    </div>
+    <ul>
+      {display}
+    </ul>
   )
 }
 
