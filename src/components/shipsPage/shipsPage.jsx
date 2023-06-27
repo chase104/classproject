@@ -1,5 +1,5 @@
 import React, { useContext} from 'react';
-import { PrimaryContext } from '../../contexts/PrimaryContext';
+import { primaryContext } from '../../contexts/PrimaryContext';
 import { Link } from 'react-router-dom';
 
 
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const ShipsPage = () => {
 
-    const { ships } = useContext(PrimaryContext)
+    const { ships } = useContext(primaryContext)
 
     let shipsJsxArray = ships.map((object) => {
             

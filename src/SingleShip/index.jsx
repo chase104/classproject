@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { PrimaryContext } from "./PrimaryContext";
+import { primaryContext } from "../contexts/PrimaryContext.jsx";
 import { useParams } from "react-router-dom";
 
 
 const SingleShip = () => {
-    const { ships } = useContext(PrimaryContext);
+    const { ships } = useContext(primaryContext);
     const { name } = useParams();
 
     const singleShip = ships.find((ship) => ship.name === name);
